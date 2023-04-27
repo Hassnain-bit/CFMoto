@@ -116,7 +116,7 @@ function VehicleData() {
                 <div className="md:pl-5 xl:pl-[30px]">
                   {/* BIKE NAME */}
                   <div className="mb-5 md:mb-[30px] xl:mb-14">
-                    <h3 className="bg-gradient-text text-f_19_l_24 md:text-f_20_l_25 xl:text-f_27_l_34 font-supremeBold">
+                    <h3 className="bg-gradient-text text-f_19_l_24 md:text-f_20_l_25 xl:text-f_27_l_34 text-center font-supremeBold">
                       Motorcycle, 800MT Touring, 2022
                     </h3>
                   </div>
