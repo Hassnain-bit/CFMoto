@@ -46,6 +46,13 @@ module.exports = {
           },
         ],
 
+        f_18_l_28: [
+          "18px",
+          {
+            lineHeight: "28px",
+          },
+        ],
+
         f_19_l_24: [
           "19px",
           {
@@ -74,6 +81,13 @@ module.exports = {
           },
         ],
 
+        f_25_l_32: [
+          "25px",
+          {
+            lineHeight: "32px",
+          },
+        ],
+
         f_27_l_34: [
           "27px",
           {
@@ -85,6 +99,13 @@ module.exports = {
           "33px",
           {
             lineHeight: "42px",
+          },
+        ],
+
+        f_45_l_57: [
+          "45px",
+          {
+            lineHeight: "57px",
           },
         ],
       },
@@ -109,6 +130,8 @@ module.exports = {
           // History Even bg color
           500: "#181818",
         },
+        blue: "#009BB4",
+        red: "#FF0000",
       },
 
       maxWidth: {

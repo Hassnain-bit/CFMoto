@@ -6,6 +6,7 @@ import bike_img from "../images/bike_img.png";
 function VehicleData() {
   const [openSidebar, setOpenSidebar] = useState(false);
 
+  // HISTORY LIST DATA
   const items = [
     {
       length: 1,

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import logo from "../../images/logo.svg";
 import dashboard_icon from "../../images/dashboard_icon.svg";
 import dashboard_icon_active from "../../images/dashboard_icon_white.svg";
@@ -13,9 +13,11 @@ import settings_icon from "../../images/settings_icon.svg";
 import users_icon from "../../images/users_icon.svg";
 import email_icon from "../../images/email_icon.svg";
 import backup_icon from "../../images/backup_icon.svg";
+import { Link, useLocation } from "react-router-dom";
 
 function Sidebar(props) {
-  const [activeLink, setActiveLink] = useState("dashboard");
+  const location = useLocation();
+  const [activeLink, setActiveLink] = useState("");
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
@@ -28,6 +30,7 @@ function Sidebar(props) {
       text: "Dashboard",
       icon: dashboard_icon,
       activeIcon: dashboard_icon_active,
+      goToLink: "/dashboard",
     },
     {
       id: "service",
@@ -64,6 +67,7 @@ function Sidebar(props) {
       text: "Vehicle",
       icon: vehicle_icon,
       activeIcon: vehicle_icon,
+      goToLink: "/vin",
     },
   ];
 
@@ -95,6 +99,18 @@ function Sidebar(props) {
     },
   ];
 
+  // SET ACTIVE STATE ACCORDING TO URL
+  useEffect(() => {
+    const currentPath = location.pathname;
+    setActiveLink(
+      currentPath === "/dashboard"
+        ? "dashboard"
+        : currentPath === "/vehicleData"
+        ? "vehicle"
+        : ""
+    );
+  }, [location]);
+
   return (
     <>
       <div
@@ -115,7 +131,8 @@ function Sidebar(props) {
           <ul className="pt-[92px] px-[18px] md:px-3 xl:px-[18px] space-y-5">
             {linksTop.map((link) => (
               <li key={link.id}>
-                <a
+                <Link
+                  to={link.goToLink}
                   className={`w-full flex items-center justify-start pl-11 md:pl-4 xl:pl-12 py-2.5 rounded-[10px] ${
                     activeLink === link.id
                       ? "bg-gradient text-white"
@@ -131,7 +148,7 @@ function Sidebar(props) {
                     />
                   </span>
                   <span className="text-f_22_l_28">{link.text}</span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -172,9 +189,10 @@ function Sidebar(props) {
       </div>
 
       {/* MOBILE CLOSE SIDEBAR OVERLAY */}
-      <div className="md:hidden fixed inset-0" onClick={()=> props.setOpenSidebar(false)}>
-
-      </div>
+      <div
+        className={props.openSidebar ? "md:hidden fixed inset-0" : "md:hidden"}
+        onClick={() => props.setOpenSidebar(false)}
+      ></div>
     </>
   );
 }
