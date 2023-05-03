@@ -36,14 +36,14 @@ function Login() {
           <form className="w-full max-w-[22.1875rem] flex flex-col px-[26px] md:px-0 space-y-[30px]">
             {/* EMAIL INPUT */}
             <input
-              className="w-full h-[53px] rounded-[10px] border border-white bg-transparent text-center text-white text-f_16_l_20 md:text-f_20_l_25 font-supremeMedium px-3 placeholder:text-white"
+              className="w-full h-[53px] rounded-[10px] border border-white-100 bg-transparent text-center text-white-100 text-f_16_l_20 md:text-f_20_l_25 font-supremeMedium px-3 placeholder:text-white-100"
               placeholder="username"
               type="email"
             />
 
             {/* PASSWORD INPUT */}
             <input
-              className="w-full h-[53px] rounded-[10px] border border-white bg-transparent text-center text-white text-f_16_l_20 md:text-f_20_l_25 font-supremeMedium px-3 placeholder:text-white"
+              className="w-full h-[53px] rounded-[10px] border border-white-100 bg-transparent text-center text-white-100 text-f_16_l_20 md:text-f_20_l_25 font-supremeMedium px-3 placeholder:text-white-100"
               placeholder="password"
               type="password"
             />
@@ -53,7 +53,7 @@ function Login() {
               {buttons.map((link) => (
                 <button
                   key={link.id}
-                  className="w-full h-[53px] border border-white rounded-[10px] text-f_16_l_20 md:text-f_20_l_25 font-supremeMedium"
+                  className="w-full h-[53px] border border-white-100 rounded-[10px] text-f_16_l_20 md:text-f_20_l_25 font-supremeMedium"
                 >
                   {link.name}
                 </button>

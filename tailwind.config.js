@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: [
+    "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
     extend: {
       fontSize: {
@@ -18,10 +21,24 @@ module.exports = {
           },
         ],
 
+        f_13_l_16: [
+          "13px",
+          {
+            lineHeight: "16px",
+          },
+        ],
+
         f_14_l_18: [
           "14px",
           {
             lineHeight: "18px",
+          },
+        ],
+
+        f_14_l_22: [
+          "14px",
+          {
+            lineHeight: "22px",
           },
         ],
 
@@ -36,6 +53,13 @@ module.exports = {
           "16px",
           {
             lineHeight: "20px",
+          },
+        ],
+
+        f_16_l_25: [
+          "16px",
+          {
+            lineHeight: "25px",
           },
         ],
 
@@ -88,6 +112,13 @@ module.exports = {
           },
         ],
 
+        f_26_l_33: [
+          "26px",
+          {
+            lineHeight: "33px",
+          },
+        ],
+
         f_27_l_34: [
           "27px",
           {
@@ -99,6 +130,13 @@ module.exports = {
           "33px",
           {
             lineHeight: "42px",
+          },
+        ],
+
+        f_35_l_44: [
+          "35px",
+          {
+            lineHeight: "44px",
           },
         ],
 
@@ -117,8 +155,13 @@ module.exports = {
       },
 
       colors: {
-        lightWhite: "#ffffff8c",
-        offWhite: "#fafafa73",
+        white: {
+          100: "#ffffff",
+          200: "#ffffff8c",
+          300: "#fafafa73",
+          400: "#ffffff4d",
+          500: "#E1E1E1",
+        },
         black: {
           100: "#000000",
           // Sidebar bg color
@@ -129,9 +172,17 @@ module.exports = {
           400: "#101010",
           // History Even bg color
           500: "#181818",
+
+          600: "#2B2A2A",
+
+          700: "#606060",
+          
+          800: "#121212",
         },
         blue: "#009BB4",
         red: "#FF0000",
+        success: "#0DFF0F",
+        error: "#FF2600",
       },
 
       maxWidth: {
@@ -150,5 +201,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("flowbite/plugin")],
 };

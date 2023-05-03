@@ -167,21 +167,28 @@ input:focus + .slider {
   border-radius: 50%;
 }
 
-/* .vehicle_data_grid {
-  display: grid;
-  grid-template-areas:
-    "image list"
-    "buttons list";
+/* CSS FOR CHECKBOX ICON */
+[type="checkbox"]:checked {
+  background-image: url(./images/tick_icon.svg);
+  background-size: auto;
 }
 
-.vehicle_data_grid .image{
-  grid-area: image;
+/* CSS FOR INPUT FOCUS */
+[type="text"]:focus,
+[type="email"]:focus,
+[type="url"]:focus,
+[type="password"]:focus,
+[type="number"]:focus,
+[type="date"]:focus,
+[type="datetime-local"]:focus,
+[type="month"]:focus,
+[type="search"]:focus,
+[type="tel"]:focus,
+[type="time"]:focus,
+[type="week"]:focus,
+[multiple]:focus,
+textarea:focus,
+select:focus {
+  border-color: #009bb4;
+  box-shadow: none;
 }
-
-.vehicle_data_grid .list{
-  grid-area: list;
-}
-
-.vehicle_data_grid .buttons{
-  grid-area: buttons;
-} */

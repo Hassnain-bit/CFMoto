@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Sidebar from "../components/Common/Sidebar";
 import Header from "../components/Common/Header";
 import bike_img from "../images/bike_img.png";
+import { Link } from "react-router-dom";
 
 function VehicleData() {
   const [openSidebar, setOpenSidebar] = useState(false);
@@ -66,7 +67,7 @@ function VehicleData() {
               <div className="w-full md:w-1/2 md:pt-3 xl:pt-12">
                 {/* IMAGE */}
                 <div className="mb-10 md:mb-20">
-                  <img src={bike_img} alt="bike-img" />
+                  <img className="mx-auto" src={bike_img} alt="bike-img" />
                 </div>
 
                 {/* BUTTONS DESKTOP */}
@@ -74,39 +75,42 @@ function VehicleData() {
                   <div className="flex flex-col gap-3.5 xl:gap-5 items-center">
                     <div className="w-full grid grid-cols-2 gap-3.5 xl:gap-5">
                       {/* MAINTENANCE */}
-                      <button className="w-full h-12 xl:h-[73px] rounded-[10px] border border-white text-f_14_l_18 xl:text-f_22_l_28 font-supremeMedium uppercase">
+                      <Link className="w-full h-12 xl:h-[73px] flex items-center justify-center rounded-[10px] border border-white-100 text-f_14_l_18 xl:text-f_22_l_28 font-supremeMedium uppercase">
                         MAINTENANCE
-                      </button>
+                      </Link>
 
                       {/* REPAIRING */}
-                      <button className="w-full h-12 xl:h-[73px] rounded-[10px] border border-white text-f_14_l_18 xl:text-f_22_l_28 font-supremeMedium uppercase">
+                      <Link
+                        to="/service/addNewService"
+                        className="w-full h-12 xl:h-[73px] flex items-center justify-center rounded-[10px] border border-white-100 text-f_14_l_18 xl:text-f_22_l_28 font-supremeMedium uppercase"
+                      >
                         REPAIRING
-                      </button>
+                      </Link>
 
                       {/* OEM PARTS */}
-                      <button className="w-full h-12 xl:h-[73px] rounded-[10px] border border-white text-f_14_l_18 xl:text-f_22_l_28 font-supremeMedium uppercase">
+                      <Link className="w-full h-12 xl:h-[73px] flex items-center justify-center rounded-[10px] border border-white-100 text-f_14_l_18 xl:text-f_22_l_28 font-supremeMedium uppercase">
                         OEM PARTS
-                      </button>
+                      </Link>
 
                       {/* OEM ACCESSORIES */}
-                      <button className="w-full h-12 xl:h-[73px] rounded-[10px] border border-white text-f_14_l_18 xl:text-f_22_l_28 font-supremeMedium uppercase">
+                      <Link className="w-full h-12 xl:h-[73px] flex items-center justify-center rounded-[10px] border border-white-100 text-f_14_l_18 xl:text-f_22_l_28 font-supremeMedium uppercase">
                         OEM ACCESSORIES
-                      </button>
+                      </Link>
 
                       {/* SERVICE MANUAL */}
-                      <button className="w-full h-12 xl:h-[73px] rounded-[10px] border border-white text-f_14_l_18 xl:text-f_22_l_28 font-supremeMedium uppercase">
+                      <Link className="w-full h-12 xl:h-[73px] flex items-center justify-center rounded-[10px] border border-white-100 text-f_14_l_18 xl:text-f_22_l_28 font-supremeMedium uppercase">
                         SERVICE MANUAL
-                      </button>
+                      </Link>
 
                       {/* USER MANUAL */}
-                      <button className="w-full h-12 xl:h-[73px] rounded-[10px] border border-white text-f_14_l_18 xl:text-f_22_l_28 font-supremeMedium uppercase">
+                      <Link className="w-full h-12 xl:h-[73px] flex items-center justify-center rounded-[10px] border border-white-100 text-f_14_l_18 xl:text-f_22_l_28 font-supremeMedium uppercase">
                         USER MANUAL
-                      </button>
+                      </Link>
                     </div>
                     {/* WARRANTY */}
-                    <button className="w-full h-12 xl:h-[73px] rounded-[10px] border border-white text-f_14_l_18 xl:text-f_22_l_28 font-supremeMedium uppercase">
+                    <Link className="w-full h-12 xl:h-[73px] flex items-center justify-center rounded-[10px] border border-white-100 text-f_14_l_18 xl:text-f_22_l_28 font-supremeMedium uppercase">
                       WARRANTY
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -126,13 +130,13 @@ function VehicleData() {
                   <div className="space-y-3.5 xl:space-y-5">
                     {/* SKU */}
                     <div className="flex items-center justify-between text-f_12_l_15 md:text-f_14_l_18 xl:text-f_18_l_23">
-                      <span className="text-lightWhite uppercase">SKU</span>
+                      <span className="text-white-200 uppercase">SKU</span>
                       <span>CF800-5-TOURING-BLUE</span>
                     </div>
 
                     {/* VIN CODE / PRODUCT ID */}
                     <div className="flex items-center justify-between text-f_12_l_15 md:text-f_14_l_18 xl:text-f_18_l_23">
-                      <span className="text-lightWhite uppercase">
+                      <span className="text-white-200 uppercase">
                         VIN CODE / PRODUCT ID
                       </span>
                       <span>LCEPEYL17N6000570</span>
@@ -140,19 +144,19 @@ function VehicleData() {
 
                     {/* COUNTRY */}
                     <div className="flex items-center justify-between text-f_12_l_15 md:text-f_14_l_18 xl:text-f_18_l_23">
-                      <span className="text-lightWhite uppercase">COUNTRY</span>
+                      <span className="text-white-200 uppercase">COUNTRY</span>
                       <span>Finland</span>
                     </div>
 
                     {/* SERIES */}
                     <div className="flex items-center justify-between text-f_12_l_15 md:text-f_14_l_18 xl:text-f_18_l_23">
-                      <span className="text-lightWhite uppercase">SERIES</span>
+                      <span className="text-white-200 uppercase">SERIES</span>
                       <span>Motorcycle</span>
                     </div>
 
                     {/* MODEL NAME */}
                     <div className="flex items-center justify-between text-f_12_l_15 md:text-f_14_l_18 xl:text-f_18_l_23">
-                      <span className="text-lightWhite uppercase">
+                      <span className="text-white-200 uppercase">
                         MODEL NAME
                       </span>
                       <span>800MT Touring</span>
@@ -160,7 +164,7 @@ function VehicleData() {
 
                     {/* FACTORY NAME */}
                     <div className="flex items-center justify-between text-f_12_l_15 md:text-f_14_l_18 xl:text-f_18_l_23">
-                      <span className="text-lightWhite uppercase">
+                      <span className="text-white-200 uppercase">
                         FACTORY NAME
                       </span>
                       <span>CF800-5(EU5)</span>
@@ -168,13 +172,13 @@ function VehicleData() {
 
                     {/* COLOR */}
                     <div className="flex items-center justify-between text-f_12_l_15 md:text-f_14_l_18 xl:text-f_18_l_23">
-                      <span className="text-lightWhite uppercase">COLOR</span>
+                      <span className="text-white-200 uppercase">COLOR</span>
                       <span>Blue</span>
                     </div>
 
                     {/* EU TYPE APPROVAL */}
                     <div className="flex items-center justify-between text-f_12_l_15 md:text-f_14_l_18 xl:text-f_18_l_23">
-                      <span className="text-lightWhite uppercase">
+                      <span className="text-white-200 uppercase">
                         EU TYPE APPROVAL
                       </span>
                       <span>L3e</span>
@@ -182,7 +186,7 @@ function VehicleData() {
 
                     {/* BODY TYPE */}
                     <div className="flex items-center justify-between text-f_12_l_15 md:text-f_14_l_18 xl:text-f_18_l_23">
-                      <span className="text-lightWhite uppercase">
+                      <span className="text-white-200 uppercase">
                         BODY TYPE
                       </span>
                       <span></span>
@@ -190,7 +194,7 @@ function VehicleData() {
 
                     {/* STEERING POWER */}
                     <div className="flex items-center justify-between text-f_12_l_15 md:text-f_14_l_18 xl:text-f_18_l_23">
-                      <span className="text-lightWhite uppercase">
+                      <span className="text-white-200 uppercase">
                         STEERING POWER
                       </span>
                       <span></span>
@@ -198,25 +202,25 @@ function VehicleData() {
 
                     {/* WHEELS */}
                     <div className="flex items-center justify-between text-f_12_l_15 md:text-f_14_l_18 xl:text-f_18_l_23">
-                      <span className="text-lightWhite uppercase">WHEELS</span>
+                      <span className="text-white-200 uppercase">WHEELS</span>
                       <span></span>
                     </div>
 
                     {/* SCREEN */}
                     <div className="flex items-center justify-between text-f_12_l_15 md:text-f_14_l_18 xl:text-f_18_l_23">
-                      <span className="text-lightWhite uppercase">SCREEN</span>
+                      <span className="text-white-200 uppercase">SCREEN</span>
                       <span>TFT</span>
                     </div>
 
                     {/* LIGHTS */}
                     <div className="flex items-center justify-between text-f_12_l_15 md:text-f_14_l_18 xl:text-f_18_l_23">
-                      <span className="text-lightWhite uppercase">LIGHTS</span>
+                      <span className="text-white-200 uppercase">LIGHTS</span>
                       <span></span>
                     </div>
 
                     {/* CARGO COMPARTMENTS */}
                     <div className="flex items-center justify-between text-f_12_l_15 md:text-f_14_l_18 xl:text-f_18_l_23">
-                      <span className="text-lightWhite uppercase">
+                      <span className="text-white-200 uppercase">
                         CARGO COMPARTMENTS
                       </span>
                       <span>Boxes</span>
@@ -224,7 +228,7 @@ function VehicleData() {
 
                     {/* COMMUNICATION TERMINAL */}
                     <div className="flex items-center justify-between text-f_12_l_15 md:text-f_14_l_18 xl:text-f_18_l_23">
-                      <span className="text-lightWhite uppercase">
+                      <span className="text-white-200 uppercase">
                         COMMUNICATION TERMINAL
                       </span>
                       <span>T-BOX</span>
@@ -232,7 +236,7 @@ function VehicleData() {
 
                     {/* DATA OF MANUFACTURE */}
                     <div className="flex items-center justify-between text-f_12_l_15 md:text-f_14_l_18 xl:text-f_18_l_23">
-                      <span className="text-lightWhite uppercase">
+                      <span className="text-white-200 uppercase">
                         DATA OF MANUFACTURE
                       </span>
                       <span>2022</span>
@@ -240,13 +244,13 @@ function VehicleData() {
 
                     {/* ORDERER */}
                     <div className="flex items-center justify-between text-f_12_l_15 md:text-f_14_l_18 xl:text-f_18_l_23">
-                      <span className="text-lightWhite uppercase">ORDERER</span>
+                      <span className="text-white-200 uppercase">ORDERER</span>
                       <span>Matti Kasela</span>
                     </div>
 
                     {/* ORDERER PHONE */}
                     <div className="flex items-center justify-between text-f_12_l_15 md:text-f_14_l_18 xl:text-f_18_l_23">
-                      <span className="text-lightWhite uppercase">
+                      <span className="text-white-200 uppercase">
                         ORDERER PHONE
                       </span>
                       <span>+358123456789</span>
@@ -254,7 +258,7 @@ function VehicleData() {
 
                     {/* ORDERER EMAIL */}
                     <div className="flex items-center justify-between text-f_12_l_15 md:text-f_14_l_18 xl:text-f_18_l_23">
-                      <span className="text-lightWhite uppercase">
+                      <span className="text-white-200 uppercase">
                         ORDERER EMAIL
                       </span>
                       <span>name.name@mail.com</span>
@@ -262,7 +266,7 @@ function VehicleData() {
 
                     {/* IMPORTER */}
                     <div className="flex items-center justify-between text-f_12_l_15 md:text-f_14_l_18 xl:text-f_18_l_23">
-                      <span className="text-lightWhite uppercase">
+                      <span className="text-white-200 uppercase">
                         IMPORTER
                       </span>
                       <span>Motohobi</span>
@@ -270,7 +274,7 @@ function VehicleData() {
 
                     {/* DEALER */}
                     <div className="flex items-center justify-between text-f_12_l_15 md:text-f_14_l_18 xl:text-f_18_l_23">
-                      <span className="text-lightWhite uppercase">DEALER</span>
+                      <span className="text-white-200 uppercase">DEALER</span>
                       <span>Rothwork Motors</span>
                     </div>
                   </div>
@@ -281,39 +285,39 @@ function VehicleData() {
                   <div className="flex flex-col gap-3.5 items-center">
                     <div className="w-full grid grid-cols-2 gap-3.5">
                       {/* MAINTENANCE */}
-                      <button className="w-full h-12 rounded-[10px] border border-white text-f_14_l_18 font-supremeMedium uppercase">
+                      <Link className="w-full h-12 flex items-center justify-center rounded-[10px] border border-white-100 text-f_14_l_18 font-supremeMedium uppercase">
                         MAINTENANCE
-                      </button>
+                      </Link>
 
                       {/* REPAIRING */}
-                      <button className="w-full h-12 rounded-[10px] border border-white text-f_14_l_18 font-supremeMedium uppercase">
+                      <Link to="/service/addNewService" className="w-full h-12 flex items-center justify-center rounded-[10px] border border-white-100 text-f_14_l_18 font-supremeMedium uppercase">
                         REPAIRING
-                      </button>
+                      </Link>
 
                       {/* OEM PARTS */}
-                      <button className="w-full h-12 rounded-[10px] border border-white text-f_14_l_18 font-supremeMedium uppercase">
+                      <Link className="w-full h-12 flex items-center justify-center rounded-[10px] border border-white-100 text-f_14_l_18 font-supremeMedium uppercase">
                         OEM PARTS
-                      </button>
+                      </Link>
 
                       {/* OEM ACCESSORIES */}
-                      <button className="w-full h-12 rounded-[10px] border border-white text-f_14_l_18 font-supremeMedium uppercase">
+                      <Link className="w-full h-12 flex items-center justify-center rounded-[10px] border border-white-100 text-f_14_l_18 font-supremeMedium uppercase">
                         OEM ACCESSORIES
-                      </button>
+                      </Link>
 
                       {/* SERVICE MANUAL */}
-                      <button className="w-full h-12 rounded-[10px] border border-white text-f_14_l_18 font-supremeMedium uppercase">
+                      <Link className="w-full h-12 flex items-center justify-center rounded-[10px] border border-white-100 text-f_14_l_18 font-supremeMedium uppercase">
                         SERVICE MANUAL
-                      </button>
+                      </Link>
 
                       {/* USER MANUAL */}
-                      <button className="w-full h-12 rounded-[10px] border border-white text-f_14_l_18 font-supremeMedium uppercase">
+                      <Link className="w-full h-12 flex items-center justify-center rounded-[10px] border border-white-100 text-f_14_l_18 font-supremeMedium uppercase">
                         USER MANUAL
-                      </button>
+                      </Link>
                     </div>
                     {/* WARRANTY */}
-                    <button className="w-full h-12 rounded-[10px] border border-white text-f_14_l_18 font-supremeMedium uppercase">
+                    <Link className="w-full h-12 flex items-center justify-center rounded-[10px] border border-white-100 text-f_14_l_18 font-supremeMedium uppercase">
                       WARRANTY
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

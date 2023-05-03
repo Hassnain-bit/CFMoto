@@ -38,8 +38,8 @@ function Random() {
               to={link.goToLink}
               className={`w-full ${
                 activeLink === link.id
-                  ? "bg-gradient text-white"
-                  : "text-lightWhite"
+                  ? "bg-gradient text-white-100"
+                  : "text-white-200"
               }`}
               href="#abc"
               onClick={() => handleLinkClick(link.id)}

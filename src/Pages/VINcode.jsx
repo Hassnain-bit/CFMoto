@@ -24,13 +24,13 @@ function VINcode() {
 
             {/* VIN NUMBER INPUT */}
             <input
-              className="w-full h-[53px] rounded-[10px] border border-white bg-transparent text-center text-white text-f_16_l_20 md:text-f_20_l_25 font-supremeMedium px-3 placeholder:text-white"
+              className="w-full h-[53px] rounded-[10px] border border-white-100 bg-transparent text-center text-white-100 text-f_16_l_20 md:text-f_20_l_25 font-supremeMedium px-3 placeholder:text-white-100"
               placeholder="VIN number"
               type="text"
             />
 
             {/* SUBMIT BUTTON */}
-            <Link to="/vehicleData">
+            <Link to="/service">
               <button className="bg-gradient w-full h-[53px] text-f_19_l_24 md:text-f_22_l_28 font-supremeMedium rounded-[10px] uppercase">
                 Submit
               </button>

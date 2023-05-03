@@ -105,7 +105,7 @@ function Sidebar(props) {
     setActiveLink(
       currentPath === "/dashboard"
         ? "dashboard"
-        : currentPath === "/vehicleData"
+        : currentPath === "/service" || "/service/addNewService"
         ? "vehicle"
         : ""
     );
@@ -135,8 +135,8 @@ function Sidebar(props) {
                   to={link.goToLink}
                   className={`w-full flex items-center justify-start pl-11 md:pl-4 xl:pl-12 py-2.5 rounded-[10px] ${
                     activeLink === link.id
-                      ? "bg-gradient text-white"
-                      : "text-lightWhite"
+                      ? "bg-gradient text-white-100"
+                      : "text-white-200"
                   }`}
                   href="#abc"
                   onClick={() => handleLinkClick(link.id)}
@@ -168,8 +168,8 @@ function Sidebar(props) {
                 <a
                   className={`w-full flex items-center justify-start pl-11 md:pl-4 xl:pl-12 py-2.5 rounded-[10px] ${
                     activeLink === link.id
-                      ? "bg-gradient text-white"
-                      : "text-lightWhite"
+                      ? "bg-gradient text-white-100"
+                      : "text-white-200"
                   }`}
                   href="#abc"
                   onClick={() => handleLinkClick(link.id)}
