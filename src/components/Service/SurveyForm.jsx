@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import { Tooltip } from "react-tooltip";
-import "react-tooltip/dist/react-tooltip.css";
 import info_icon from "../../images/info_icon.svg";
 import bike_img from "../../images/bike_img.png";
-import close_icon from "../../images/close_icon.svg";
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 
@@ -16,6 +13,7 @@ export default function SurveyForm() {
       executed: false,
       pointerEvents: "unset",
       backgroundColor: "#2B2A2A",
+      openTooltip: false,
     },
     {
       id: 2,
@@ -24,6 +22,7 @@ export default function SurveyForm() {
       executed: false,
       pointerEvents: "none",
       backgroundColor: "#181818",
+      openTooltip: false,
     },
     {
       id: 3,
@@ -32,6 +31,7 @@ export default function SurveyForm() {
       executed: false,
       pointerEvents: "none",
       backgroundColor: "#181818",
+      openTooltip: false,
     },
     {
       id: 4,
@@ -40,6 +40,7 @@ export default function SurveyForm() {
       executed: false,
       pointerEvents: "none",
       backgroundColor: "#181818",
+      openTooltip: false,
     },
     {
       id: 5,
@@ -48,6 +49,7 @@ export default function SurveyForm() {
       executed: false,
       pointerEvents: "none",
       backgroundColor: "#181818",
+      openTooltip: false,
     },
     {
       id: 6,
@@ -56,6 +58,7 @@ export default function SurveyForm() {
       executed: false,
       pointerEvents: "none",
       backgroundColor: "#181818",
+      openTooltip: false,
     },
     {
       id: 7,
@@ -64,6 +67,7 @@ export default function SurveyForm() {
       executed: false,
       pointerEvents: "none",
       backgroundColor: "#181818",
+      openTooltip: false,
     },
   ]);
 
@@ -107,9 +111,9 @@ export default function SurveyForm() {
           id="Vector"
           d="M21 21L12 12M12 12L3 3M12 12L21.0001 3M12 12L3 21.0001"
           stroke="#ffffff"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
     </svg>
@@ -129,24 +133,42 @@ export default function SurveyForm() {
             className=" bg-black-600 rounded-[10px] pt-[21px] md:pt-[19px] xl:pt-3 pl-8 md:pl-[42px] xl:pl-[22px] pb-5 md:pb-[25px] xl:pb-[34px] pr-4 md:pr-[49px] xl:pr-11"
           >
             {/* TITLE */}
-            <div className="flex items-centermb-5 md:mb-1 xl:mb-5">
-              <h4 className="text-f_18_l_23 text-white-100">
-                Clean or replace the air filter
-              </h4>
-              <div
-                className="flex items-center justify-center ml-[9px]"
-                data-tooltip-id="my-tooltip"
-              >
-                <img src={info_icon} alt="info-icon" />
-              </div>
-            </div>
+            <div
+              className="relative w-fit mb-5 md:mb-1 xl:mb-5"
+              onMouseEnter={() =>
+                setBoxes((prevBoxes) => {
+                  const newBoxes = [...prevBoxes];
+                  newBoxes[index].openTooltip = true;
+                  return newBoxes;
+                })
+              }
+              onMouseLeave={() =>
+                setBoxes((prevBoxes) => {
+                  const newBoxes = [...prevBoxes];
+                  newBoxes[index].openTooltip = false;
+                  return newBoxes;
+                })
+              }
+            >
+              <div className="flex items-start justify-start">
+                <h4 className="text-f_18_l_23 text-white-100">
+                  Clean or replace the air filter
+                </h4>
 
-            {/* TOOLTIP */}
-            <div>
-              <Tooltip
-                id="my-tooltip"
-                place="bottom"
-                className="!bg-white-500 max-w-xs md:max-w-md xl:max-w-2xl !p-4 z-20"
+                {/* INFO ICON */}
+                <div className="flex items-start justify-start relative ml-[9px]">
+                  <img src={info_icon} alt="info-icon" />
+                  <div
+                    style={{ display: box.openTooltip ? "block" : "none" }}
+                    className=" absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-[180%] w-2 h-2 bg-white-500 rotate-45"
+                  ></div>
+                </div>
+              </div>
+
+              {/* TOOLTIP CONTENT */}
+              <div
+                className="absolute top-[1.8rem] bg-white-500 w-max max-w-xs md:max-w-md xl:max-w-2xl rounded-[4px] p-4 z-10"
+                style={{ display: box.openTooltip ? "block" : "none" }}
               >
                 {/* TEXT */}
                 <div className="mb-7">
@@ -159,32 +181,34 @@ export default function SurveyForm() {
                 {/* IMAGES */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-10 py-5">
                   <img
-                    className="z-50 cursor-pointer"
+                    className="relative z-10 cursor-pointer"
                     src={bike_img}
                     alt="img"
                     onClick={onOpenModal}
                   />
                   <img
-                    className="z-50 cursor-pointer"
+                    className="relative z-10 cursor-pointer"
                     src={bike_img}
                     alt="img"
                     onClick={onOpenModal}
                   />
                   <img
-                    className="z-50 cursor-pointer"
+                    className="relative z-10 cursor-pointer"
                     src={bike_img}
                     alt="img"
                     onClick={onOpenModal}
                   />
                   <img
-                    className="z-50 cursor-pointer"
+                    className="relative z-10 cursor-pointer"
                     src={bike_img}
                     alt="img"
                     onClick={onOpenModal}
                   />
                 </div>
-              </Tooltip>
+              </div>
             </div>
+
+            
 
             <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between pr-4 md:pr-0 gap-y-4 md:gap-y-0">
               {/* LEFT */}
@@ -293,7 +317,6 @@ export default function SurveyForm() {
           open={open}
           onClose={onCloseModal}
           classNames={{
-            overlay: "customOverlay",
             modal: "!bg-black-800",
           }}
           closeIcon={closeIcon}
@@ -304,6 +327,8 @@ export default function SurveyForm() {
           </div>
         </Modal>
       </div>
+
+      
     </>
   );
 }

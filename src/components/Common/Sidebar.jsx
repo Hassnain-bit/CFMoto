@@ -116,8 +116,8 @@ function Sidebar(props) {
       <div
         className={
           props.openSidebar
-            ? "w-[85%] md:w-[16.25rem] xl:w-[21.125rem] bg-black-200 fixed top-0 left-0 bottom-0 flex flex-col justify-between overflow-y-auto sidebar z-10 translate-x-0 md:translate-x-0 transition"
-            : "w-[85%] md:w-[16.25rem] xl:w-[21.125rem] bg-black-200 fixed top-0 left-0 bottom-0 flex flex-col justify-between overflow-y-auto sidebar z-10 -translate-x-full md:translate-x-0 transition"
+            ? "w-[85%] md:w-[16.25rem] xl:w-[21.125rem] bg-black-200 fixed top-0 left-0 bottom-0 flex flex-col justify-between overflow-y-auto sidebar z-50 translate-x-0 md:translate-x-0 transition"
+            : "w-[85%] md:w-[16.25rem] xl:w-[21.125rem] bg-black-200 fixed top-0 left-0 bottom-0 flex flex-col justify-between overflow-y-auto sidebar z-50 -translate-x-full md:translate-x-0 transition"
         }
       >
         {/* TOP PORTION */}

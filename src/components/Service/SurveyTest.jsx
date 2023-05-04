@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import info_icon from "../../images/info_icon.svg";
+import bike_img from "../../images/bike_img.png";
 
 export default function SurveyTest() {
   const [boxes, setBoxes] = useState([
@@ -26,38 +28,6 @@ export default function SurveyTest() {
       pointerEvents: "none",
       opacity: 0.5,
     },
-    {
-      id: 4,
-      yes: false,
-      no: false,
-      executed: false,
-      pointerEvents: "none",
-      opacity: 0.5,
-    },
-    {
-      id: 5,
-      yes: false,
-      no: false,
-      executed: false,
-      pointerEvents: "none",
-      opacity: 0.5,
-    },
-    {
-      id: 6,
-      yes: false,
-      no: false,
-      executed: false,
-      pointerEvents: "none",
-      opacity: 0.5,
-    },
-    {
-      id: 7,
-      yes: false,
-      no: false,
-      executed: false,
-      pointerEvents: "none",
-      opacity: 0.5,
-    },
   ]);
 
   const handleCheckboxChange = (boxId, checkboxType) => {
@@ -68,7 +38,7 @@ export default function SurveyTest() {
       newBoxes[boxId - 1].no = false;
       newBoxes[boxId - 1].executed = true;
 
-      if (boxId < 7) {
+      if (boxId < 3) {
         newBoxes[boxId].pointerEvents = "unset";
         newBoxes[boxId].opacity = 1;
       }
@@ -81,15 +51,46 @@ export default function SurveyTest() {
     setBoxes(newBoxes);
   };
 
+  const [openTooltip, setOpenTooltip] = useState(false);
   return (
     <div>
       {boxes.map((box, index) => (
         <div
           key={box.id}
           style={{ pointerEvents: box.pointerEvents, opacity: box.opacity }}
-          className=" bg-black-600 rounded-[10px] pt-2 pl-[22px] pb-[38px] pr-12"
         >
-          <h4 className="text-f_18_l_23 text-white-100">Clean or replace the air filter</h4>
+          {/* TITLE */}
+          <div
+            onMouseEnter={() => setOpenTooltip(true)}
+            onMouseLeave={() => setOpenTooltip(false)}
+          >
+            <div>
+              <h4>Clean or replace the air filter</h4>
+
+              {/* INFO ICON */}
+              <div>
+                <img src={info_icon} alt="info-icon" />
+                <div style={{ display: openTooltip ? "block" : "none" }}></div>
+              </div>
+            </div>
+
+            {/* TOOLTIP CONTENT */}
+            <div style={{ display: openTooltip ? "block" : "none" }}>
+              {/* TEXT */}
+              <div>
+                <h3>
+                  Explanations of how to perform this service procedure can be
+                  written here.
+                </h3>
+              </div>
+
+              {/* IMAGES */}
+              <div>
+                <img src={bike_img} alt="img" />
+                <img src={bike_img} alt="img" />
+              </div>
+            </div>
+          </div>
           <div>
             <label htmlFor={`yes-${box.id}`}>Yes</label>
             <input
@@ -108,7 +109,7 @@ export default function SurveyTest() {
               onChange={() => handleCheckboxChange(box.id, "no")}
             />
           </div>
-          
+
           <div>
             <label htmlFor={`executed-${box.id}`}>Executed</label>
             <input
@@ -117,7 +118,6 @@ export default function SurveyTest() {
               checked={box.executed}
             />
           </div>
-          
 
           {box.no && (
             <div>

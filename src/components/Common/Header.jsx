@@ -8,7 +8,7 @@ import logo from "../../images/logo.svg";
 function Header(props) {
   return (
     <>
-      <div className="bg-black-300 px-6 md:pl-[16.25rem] xl:pl-[21.125rem] md:pr-9 xl:pr-12 w-full h-[62px] md:h-[6.5625rem] fixed top-0 z-[5]">
+      <div className="bg-black-300 px-6 md:pl-[16.25rem] xl:pl-[21.125rem] md:pr-9 xl:pr-12 w-full h-[62px] md:h-[6.5625rem] fixed top-0 z-20">
         <div className="relative h-full flex items-center justify-between  md:justify-end">
           {/* HAMBURGER ICON */}
           <button className="md:hidden" onClick={()=> props.setOpenSidebar(true)}>
