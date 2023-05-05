@@ -192,3 +192,16 @@ select:focus {
   border-color: #009bb4;
   box-shadow: none;
 }
+
+
+.select span{
+display: none;
+}
+
+.select svg{
+  fill: #ffffff;
+}
+
+.select p{
+  color: #ffffff;
+}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../../images/logo.svg";
 import dashboard_icon from "../../images/dashboard_icon.svg";
 import dashboard_icon_active from "../../images/dashboard_icon_white.svg";
@@ -78,6 +78,7 @@ function Sidebar(props) {
       text: "Settings",
       icon: settings_icon,
       activeIcon: settings_icon,
+      goToLink: "/settings",
     },
     {
       id: "users",
@@ -105,6 +106,8 @@ function Sidebar(props) {
     setActiveLink(
       currentPath === "/dashboard"
         ? "dashboard"
+        : currentPath === "/settings"
+        ? "settings"
         : currentPath === "/service" || "/service/addNewService"
         ? "vehicle"
         : ""
@@ -165,7 +168,8 @@ function Sidebar(props) {
           <ul className="px-[18px] md:px-3 xl:px-[18px] space-y-5">
             {linksBottom.map((link) => (
               <li key={link.id}>
-                <a
+                <Link
+                  to={link.goToLink}
                   className={`w-full flex items-center justify-start pl-11 md:pl-4 xl:pl-12 py-2.5 rounded-[10px] ${
                     activeLink === link.id
                       ? "bg-gradient text-white-100"
@@ -181,7 +185,7 @@ function Sidebar(props) {
                     />
                   </span>
                   <span className="text-f_22_l_28">{link.text}</span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/react-tailwindcss-select/dist/index.esm.js",
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
@@ -176,7 +177,7 @@ module.exports = {
           600: "#2B2A2A",
 
           700: "#606060",
-          
+
           800: "#121212",
         },
         blue: "#009BB4",

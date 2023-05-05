@@ -7,6 +7,7 @@ import Login from "./Pages/Login";
 import Dashboard from "./Pages/Dashboard";
 import VINcode from "./Pages/VINcode";
 import AddNewService from "./Pages/AddNewService";
+import Settings from "./Pages/Settings";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/vin" element={<VINcode/>} />
         <Route path="/service" element={<VehicleData/>} />
         <Route path="/service/addNewService" element={<AddNewService/>} />
+        <Route path="/settings" element={<Settings/>} />
       </Routes>
     </>
   );
